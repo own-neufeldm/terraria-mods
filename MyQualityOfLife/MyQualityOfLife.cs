@@ -27,26 +27,59 @@ namespace MyQualityOfLife
           ToggleTimeFreeze();
           break;
 
+        case "moondial":
+          FastForwardTimeToDusk();
+          break;
+
         case "quest":
           RotateAnglerQuest();
           break;
 
+        case "sundial":
+          FastForwardTimeToDawn();
+          break;
+
         default:
-          Print("Unknown command.", Color.OrangeRed);
+          SendMessage("Unknown command.", Color.Red);
           break;
       }
     }
 
     private static void ShowHelp()
     {
-      Print("Usage: myqol <command>", Color.Yellow);
-      Print("freeze   Freeze or unfreeze time.");
-      Print("quest   Rotate the angler quest.");
+      SendMessage("Usage: myqol <command>", Color.Yellow);
+      SendMessage("freeze   Freeze or unfreeze time.");
+      SendMessage("moondial   Fast-forward time to dusk.");
+      SendMessage("quest   Rotate the angler quest.");
+      SendMessage("sundial   Fast-forward time to dawn.");
     }
 
-    private static void Print(string text, Color? color = null)
+    // Send a chat message to this client's player.
+    private static void SendMessage(string text, Color? color = null)
     {
-      Main.NewText(text, color);
+      Terraria.Chat.ChatHelper.SendChatMessageToClient(
+        Terraria.Localization.NetworkText.From(text),
+        color ?? Color.White,
+        Main.myPlayer
+      );
+    }
+
+    // Broadcast a chat message to all players.
+    private static void BroadcastMessage(string text, Color? color = null)
+    {
+      Terraria.Chat.ChatHelper.BroadcastChatMessage(
+        Terraria.Localization.NetworkText.From(text),
+        color ?? Color.White
+      );
+    }
+
+    // Freeze or unfreeze time.
+    //
+    // TODO: confirm functionality in multiplayer with another player.
+    private static void ToggleTimeFreeze()
+    {
+      var power = CreativePowerManager.Instance.GetPower<CreativePowers.FreezeTime>();
+      power.SetPowerInfo(!power.Enabled);
     }
 
     // Rotate the angler quest.
@@ -123,13 +156,24 @@ namespace MyQualityOfLife
       NetMessage.SendAnglerQuest(-1);
     }
 
-    // Freeze or unfreeze time.
+    // Fast-forward time to dusk.
     //
-    // TODO: confirm functionality in multiplayer with another player.
-    private static void ToggleTimeFreeze()
+    // TODO: fix multiplayer.
+    private static void FastForwardTimeToDusk()
     {
-      var power = CreativePowerManager.Instance.GetPower<CreativePowers.FreezeTime>();
-      power.SetPowerInfo(!power.Enabled);
+      if (Main.IsFastForwardingTime()) return;
+      Main.moondialCooldown = 0;
+      Main.Moondialing();
+    }
+
+    // Fast-forward time to dawn.
+    //
+    // TODO: fix multiplayer.
+    private static void FastForwardTimeToDawn()
+    {
+      if (Main.IsFastForwardingTime()) return;
+      Main.sundialCooldown = 0;
+      Main.Sundialing();
     }
   }
 }

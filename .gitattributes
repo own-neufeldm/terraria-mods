@@ -1,2 +1,5 @@
-* eof=crlf
+# Force all text files to use CRLF on checkout
+* text eol=crlf
+
+# Explicitly protect binary files from line-ending normalization
 *.png binary

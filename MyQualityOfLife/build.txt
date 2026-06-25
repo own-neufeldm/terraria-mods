@@ -1,3 +1,0 @@
-displayName = My Quality Of Life
-author = Martin
-version = 0.1

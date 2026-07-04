@@ -7,8 +7,6 @@ using Terraria.ModLoader.Config;
 
 namespace BetterMetalDetector
 {
-  public class BetterMetalDetector : Mod { }
-
   public class System : ModSystem
   {
     public override void PostSetupContent()
@@ -20,7 +18,7 @@ namespace BetterMetalDetector
     {
       if (config == null) return;
 
-      // Ores
+      // Ores (pre-hardmode)
       Main.tileOreFinderPriority[TileID.DesertFossil] = (short)config.FossilOre;
       Main.tileOreFinderPriority[TileID.FossilOre] = (short)config.FossilOre;
       Main.tileOreFinderPriority[TileID.Copper] = (short)config.CopperOre;
@@ -34,6 +32,8 @@ namespace BetterMetalDetector
       Main.tileOreFinderPriority[TileID.Demonite] = (short)config.DemoniteOre;
       Main.tileOreFinderPriority[TileID.Crimtane] = (short)config.CrimtaneOre;
       Main.tileOreFinderPriority[TileID.Meteorite] = (short)config.MeteoriteOre;
+
+      // Ores (hardmode)
       Main.tileOreFinderPriority[TileID.Cobalt] = (short)config.CobaltOre;
       Main.tileOreFinderPriority[TileID.Palladium] = (short)config.PalladiumOre;
       Main.tileOreFinderPriority[TileID.Mythril] = (short)config.MythrilOre;
@@ -42,7 +42,7 @@ namespace BetterMetalDetector
       Main.tileOreFinderPriority[TileID.Titanium] = (short)config.TitaniumOre;
       Main.tileOreFinderPriority[TileID.Chlorophyte] = (short)config.ChlorophyteOre;
 
-      // Treasures
+      // Treasures (pre-hardmode)
       Main.tileOreFinderPriority[TileID.Pots] = (short)config.Pot;
       Main.tileOreFinderPriority[TileID.Containers] = (short)config.Chest;
       Main.tileOreFinderPriority[TileID.Containers2] = (short)config.Chest;
@@ -51,9 +51,11 @@ namespace BetterMetalDetector
       Main.tileOreFinderPriority[TileID.Heart] = (short)config.LifeCrystal;
       Main.tileOreFinderPriority[TileID.LifeCrystalBoulder] = (short)config.LifeCrystal;
       Main.tileOreFinderPriority[TileID.ManaCrystal] = (short)config.ManaCrystal;
-      Main.tileOreFinderPriority[TileID.Crystals] = (short)config.GelatinCrystal;
       Main.tileOreFinderPriority[TileID.DyePlants] = (short)config.StrangePlant;
       Main.tileOreFinderPriority[TileID.GlowTulip] = (short)config.GlowTulip;
+
+      // Treasures (hardmode)
+      Main.tileOreFinderPriority[TileID.Crystals] = (short)config.GelatinCrystal;
       Main.tileOreFinderPriority[TileID.LifeFruit] = (short)config.LifeFruit;
     }
   }
@@ -62,116 +64,201 @@ namespace BetterMetalDetector
   {
     public override ConfigScope Mode => ConfigScope.ClientSide;
 
-    [Header("Ores")]
+    [Header("OresPreHM")]
 
-    [DefaultValue(150)]
+    [Slider]
+    [SliderColor(185, 140, 100)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(150)]
     public int FossilOre;
 
-    [DefaultValue(200)]
+    [Slider]
+    [SliderColor(220, 105, 30)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(200)]
     public int CopperOre;
 
-    [DefaultValue(210)]
+    [Slider]
+    [SliderColor(165, 175, 160)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(210)]
     public int TinOre;
 
-    [DefaultValue(220)]
+    [Slider]
+    [SliderColor(140, 130, 120)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(220)]
     public int IronOre;
 
-    [DefaultValue(230)]
+    [Slider]
+    [SliderColor(95, 110, 130)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(230)]
     public int LeadOre;
 
-    [DefaultValue(240)]
+    [Slider]
+    [SliderColor(190, 210, 215)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(240)]
     public int SilverOre;
 
-    [DefaultValue(250)]
+    [Slider]
+    [SliderColor(130, 170, 145)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(250)]
     public int TungstenOre;
 
-    [DefaultValue(260)]
+    [Slider]
+    [SliderColor(245, 215, 75)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(260)]
     public int GoldOre;
 
-    [DefaultValue(270)]
+    [Slider]
+    [SliderColor(170, 185, 210)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(270)]
     public int PlatinumOre;
 
-    [DefaultValue(300)]
+    [Slider]
+    [SliderColor(145, 115, 210)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(300)]
     public int DemoniteOre;
 
-    [DefaultValue(310)]
+    [Slider]
+    [SliderColor(215, 45, 45)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(310)]
     public int CrimtaneOre;
 
-    [DefaultValue(400)]
+    [Slider]
+    [SliderColor(105, 95, 130)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(400)]
     public int MeteoriteOre;
 
-    [DefaultValue(600)]
+    [Header("OresHM")]
+
+    [Slider]
+    [SliderColor(0, 160, 235)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(600)]
     public int CobaltOre;
 
-    [DefaultValue(610)]
+    [Slider]
+    [SliderColor(235, 95, 50)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(610)]
     public int PalladiumOre;
 
-    [DefaultValue(620)]
+    [Slider]
+    [SliderColor(70, 195, 140)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(620)]
     public int MythrilOre;
 
-    [DefaultValue(630)]
+    [Slider]
+    [SliderColor(210, 75, 180)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(630)]
     public int OrichalcumOre;
 
-    [DefaultValue(640)]
+    [Slider]
+    [SliderColor(225, 60, 110)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(640)]
     public int AdamantiteOre;
 
-    [DefaultValue(650)]
+    [Slider]
+    [SliderColor(150, 165, 180)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(650)]
     public int TitaniumOre;
 
-    [DefaultValue(700)]
+    [Slider]
+    [SliderColor(160, 225, 35)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(700)]
     public int ChlorophyteOre;
 
-    [Header("Treasures")]
+    [Header("TreasuresPreHM")]
 
-    [DefaultValue(100)]
+    [Slider]
+    [SliderColor(165, 110, 80)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(100)]
     public int Pot;
 
-    [DefaultValue(500)]
+    [Slider]
+    [SliderColor(185, 140, 70)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(500)]
     public int Chest;
 
-    [DefaultValue(550)]
+    [Slider]
+    [SliderColor(245, 55, 105)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(550)]
     public int LifeCrystal;
 
-    [DefaultValue(550)]
+    [Slider]
+    [SliderColor(80, 105, 235)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(550)]
     public int ManaCrystal;
 
-    [DefaultValue(675)]
+    [Slider]
+    [SliderColor(195, 75, 225)]
+    [Increment(10)]
     [Range(0, 2000)]
-    public int GelatinCrystal;
-
     [DefaultValue(750)]
-    [Range(0, 2000)]
     public int StrangePlant;
 
-    [DefaultValue(760)]
+    [Slider]
+    [SliderColor(35, 205, 180)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(760)]
     public int GlowTulip;
 
-    [DefaultValue(810)]
+    [Header("TreasuresHM")]
+
+    [Slider]
+    [SliderColor(225, 110, 235)]
+    [Increment(10)]
     [Range(0, 2000)]
+    [DefaultValue(675)]
+    public int GelatinCrystal;
+
+    [Slider]
+    [SliderColor(140, 215, 55)]
+    [Increment(10)]
+    [Range(0, 2000)]
+    [DefaultValue(810)]
     public int LifeFruit;
 
     public override void OnChanged()

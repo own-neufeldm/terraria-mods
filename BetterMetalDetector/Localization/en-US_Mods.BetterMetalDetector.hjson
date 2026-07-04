@@ -3,143 +3,145 @@ Configs: {
 		DisplayName: Client Config
 
 		Headers: {
-			Ores: Priority of ores
-			Treasures: Priority of treasures
-		}
-
-		Pot: {
-			Label: "[i:LesserHealingPotion] Pot"
-			Tooltip: ""
+			OresPreHM: Priority of Ores (Pre-Hardmode)
+			OresHM: Priority of Ores (Hardmode)
+			TreasuresPreHM: Priority of Treasures (Pre-Hardmode)
+			TreasuresHM: Priority of Treasures (Hardmode)
 		}
 
 		FossilOre: {
 			Label: "[i:DesertFossil] Fossil Ore"
-			Tooltip: ""
+			Tooltip: Default is 150.
 		}
 
 		CopperOre: {
 			Label: "[i:CopperOre] Copper Ore"
-			Tooltip: ""
+			Tooltip: Default is 200.
 		}
 
 		TinOre: {
 			Label: "[i:TinOre] Tin Ore"
-			Tooltip: ""
+			Tooltip: Default is 210.
 		}
 
 		IronOre: {
 			Label: "[i:IronOre] Iron Ore"
-			Tooltip: ""
+			Tooltip: Default is 220.
 		}
 
 		LeadOre: {
 			Label: "[i:LeadOre] Lead Ore"
-			Tooltip: ""
+			Tooltip: Default is 230.
 		}
 
 		SilverOre: {
 			Label: "[i:SilverOre] Silver Ore"
-			Tooltip: ""
+			Tooltip: Default is 240.
 		}
 
 		TungstenOre: {
 			Label: "[i:TungstenOre] Tungsten Ore"
-			Tooltip: ""
+			Tooltip: Default is 250.
 		}
 
 		GoldOre: {
 			Label: "[i:GoldOre] Gold Ore"
-			Tooltip: ""
+			Tooltip: Default is 260.
 		}
 
 		PlatinumOre: {
 			Label: "[i:PlatinumOre] Platinum Ore"
-			Tooltip: ""
+			Tooltip: Default is 270.
 		}
 
 		DemoniteOre: {
 			Label: "[i:DemoniteOre] Demonite Ore"
-			Tooltip: ""
+			Tooltip: Default is 300.
 		}
 
 		CrimtaneOre: {
 			Label: "[i:CrimtaneOre] Crimtane Ore"
-			Tooltip: ""
+			Tooltip: Default is 310.
 		}
 
 		MeteoriteOre: {
 			Label: "[i:Meteorite] Meteorite Ore"
-			Tooltip: ""
-		}
-
-		Chest: {
-			Label: "[i:Chest] Chest"
-			Tooltip: ""
-		}
-
-		LifeCrystal: {
-			Label: "[i:LifeCrystal] Life Crystal"
-			Tooltip: ""
-		}
-
-		ManaCrystal: {
-			Label: "[i:ManaCrystal] Mana Crystal"
-			Tooltip: ""
+			Tooltip: Default is 400.
 		}
 
 		CobaltOre: {
 			Label: "[i:CobaltOre] Cobalt Ore"
-			Tooltip: ""
+			Tooltip: Default is 600.
 		}
 
 		PalladiumOre: {
 			Label: "[i:PalladiumOre] Palladium Ore"
-			Tooltip: ""
+			Tooltip: Default is 610.
 		}
 
 		MythrilOre: {
 			Label: "[i:MythrilOre] Mythril Ore"
-			Tooltip: ""
+			Tooltip: Default is 620.
 		}
 
 		OrichalcumOre: {
 			Label: "[i:OrichalcumOre] Orichalcum Ore"
-			Tooltip: ""
+			Tooltip: Default is 630.
 		}
 
 		AdamantiteOre: {
 			Label: "[i:AdamantiteOre] Adamantite Ore"
-			Tooltip: ""
+			Tooltip: Default is 640.
 		}
 
 		TitaniumOre: {
 			Label: "[i:TitaniumOre] Titanium Ore"
-			Tooltip: ""
-		}
-
-		GelatinCrystal: {
-			Label: "[i:QueenSlimeCrystal] Gelatin Crystal"
-			Tooltip: ""
+			Tooltip: Default is 650.
 		}
 
 		ChlorophyteOre: {
 			Label: "[i:ChlorophyteOre] Chlorophyte Ore"
-			Tooltip: ""
+			Tooltip: Default is 700.
+		}
+
+		Pot: {
+			Label: "[i:LesserHealingPotion] Pot"
+			Tooltip: Default is 100.
+		}
+
+		Chest: {
+			Label: "[i:Chest] Chest"
+			Tooltip: Default is 500.
+		}
+
+		LifeCrystal: {
+			Label: "[i:LifeCrystal] Life Crystal"
+			Tooltip: Default is 550.
+		}
+
+		ManaCrystal: {
+			Label: "[i:ManaCrystal] Mana Crystal"
+			Tooltip: Default is 550.
 		}
 
 		StrangePlant: {
 			Label: "[i:StrangePlant1] Strange Plant"
-			Tooltip: ""
+			Tooltip: Default is 750.
 		}
 
 		GlowTulip: {
 			Label: "[i:GlowTulip] Glow Tulip"
-			Tooltip: ""
+			Tooltip: Default is 760.
+		}
+
+		GelatinCrystal: {
+			Label: "[i:QueenSlimeCrystal] Gelatin Crystal"
+			Tooltip: Default is 675.
 		}
 
 		LifeFruit: {
 			Label: "[i:LifeFruit] Life Fruit"
-			Tooltip: ""
+			Tooltip: Default is 810.
 		}
 	}
 }

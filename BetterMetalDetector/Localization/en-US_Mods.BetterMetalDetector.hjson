@@ -1,6 +1,6 @@
 Configs: {
-	Config: {
-		DisplayName: Client Config
+	Client: {
+		DisplayName: Client
 
 		Headers: {
 			OresPreHM: Priority of Ores (Pre-Hardmode)

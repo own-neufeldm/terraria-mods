@@ -74,8 +74,8 @@ namespace BetterTreasureDetection.System
       if (mod.TryFind("AstralOre", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.AstralOre;
 
       // Ores (post-moonlord)
-      if (mod.TryFind("ExodiumOre", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.ExodiumOre;
-      Main.tileOreFinderPriority[TileID.LunarOre] = (short)config.LunarOre;
+      if (mod.TryFind("ExodiumOre", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.ExodiumCluster;
+      Main.tileOreFinderPriority[TileID.LunarOre] = (short)config.LuminiteOre;
       if (mod.TryFind("UelibloomOre", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.UelibloomOre;
       if (mod.TryFind("AuricOre", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.AuricOre;
 
@@ -119,11 +119,11 @@ namespace BetterTreasureDetection.System
       if (mod.TryFind("ThoriumOre", out ModTile tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.ThoriumOre;
       if (mod.TryFind("SmoothCoal", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.SmoothCoal;
       if (mod.TryFind("LifeQuartz", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.LifeQuartz;
-      if (mod.TryFind("Aquaite", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.Aquaite;
-      if (mod.TryFind("AquaiteBare", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.Aquaite;
+      if (mod.TryFind("Aquaite", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.AquaiteOre;
+      if (mod.TryFind("AquaiteBare", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.AquaiteOre;
 
       // Ores (hardmode)
-      if (mod.TryFind("LodeStone", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.LodeStone;
+      if (mod.TryFind("LodeStone", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.LodestoneChunk;
       if (mod.TryFind("ValadiumChunk", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.ValadiumChunk;
       if (mod.TryFind("IllumiteChunk", out tile)) Main.tileOreFinderPriority[tile.Type] = (short)config.IllumiteChunk;
 

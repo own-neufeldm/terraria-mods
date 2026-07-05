@@ -42,7 +42,7 @@ namespace BetterTreasureDetection.Configuration.Client
     [Increment(10)]
     [Range(0, 2000)]
     [DefaultValue(290)]
-    public int Aquaite;
+    public int AquaiteOre;
 
     [Header("OresHM")]
 
@@ -51,7 +51,7 @@ namespace BetterTreasureDetection.Configuration.Client
     [Increment(10)]
     [Range(0, 2000)]
     [DefaultValue(660)]
-    public int LodeStone;
+    public int LodestoneChunk;
 
     [Slider]
     [SliderColor(115, 90, 165)]

@@ -190,12 +190,12 @@ Configs: {
 			Tooltip: Default is 900.
 		}
 
-		ExodiumOre: {
+		ExodiumCluster: {
 			Label: "[i:CalamityMod/ExodiumCluster] Exodium Cluster"
 			Tooltip: Default is 760.
 		}
 
-		LunarOre: {
+		LuminiteOre: {
 			Label: "[i:LunarOre] Luminite Ore"
 			Tooltip: Default is 900.
 		}
@@ -255,12 +255,12 @@ Configs: {
 			Tooltip: Default is 282.
 		}
 
-		Aquaite: {
+		AquaiteOre: {
 			Label: "[i:ThoriumMod/Aquaite] Aquaite Ore"
 			Tooltip: Default is 290.
 		}
 
-		LodeStone: {
+		LodestoneChunk: {
 			Label: "[i:ThoriumMod/LodeStoneChunk] Lodestone Chunk"
 			Tooltip: Default is 660.
 		}

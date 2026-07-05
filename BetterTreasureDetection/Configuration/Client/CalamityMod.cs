@@ -74,14 +74,14 @@ namespace BetterTreasureDetection.Configuration.Client
     [Increment(10)]
     [Range(0, 2000)]
     [DefaultValue(760)]
-    public int ExodiumOre;
+    public int ExodiumCluster;
 
     [Slider]
     [SliderColor(110, 220, 180)]
     [Increment(10)]
     [Range(0, 2000)]
     [DefaultValue(900)]
-    public int LunarOre;
+    public int LuminiteOre;
 
     [Slider]
     [SliderColor(200, 130, 50)]

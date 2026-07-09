@@ -1,1 +1,50 @@
+Configs: {
+	Client: {
+		DisplayName: Client
 
+		Headers: {
+			DeathSounds: Death Sounds
+			RespawnSounds: Respawn Sounds
+		}
+
+		ThirteenOunceOkayLong: {
+			Label: 13Ounce - Okay (long)
+			Tooltip: Enable to add to rotation.
+		}
+
+		ThirteenOunceOkayShort: {
+			Label: 13Ounce - Okay (short)
+			Tooltip: Enable to add to rotation.
+		}
+
+		MetalPipeFalling: {
+			Label: Metal Pipe Falling
+			Tooltip: Enable to add to rotation.
+		}
+
+		MinecraftTNT: {
+			Label: Minecraft TNT
+			Tooltip: Enable to add to rotation.
+		}
+
+		ReverbFart: {
+			Label: Reverb Fart
+			Tooltip: Enable to add to rotation.
+		}
+
+		WindowsXPError: {
+			Label: Windows XP Error
+			Tooltip: Enable to add to rotation.
+		}
+
+		WindowsXPShutdown: {
+			Label: Windows XP Shutdown
+			Tooltip: Enable to add to rotation.
+		}
+
+		WindowsXPStartup: {
+			Label: Windows XP Startup
+			Tooltip: Enable to add to rotation.
+		}
+	}
+}

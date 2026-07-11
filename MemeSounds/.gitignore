@@ -1,3 +1,3 @@
 # avoid FBI swatting for copyright infringement
-Sounds/*
-!Sounds/_sources.txt
+Sounds.bak/*
+!Sounds.bak/_sources.txt

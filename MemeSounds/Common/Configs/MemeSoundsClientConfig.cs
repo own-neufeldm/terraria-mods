@@ -134,7 +134,7 @@ namespace MemeSounds.Common.Configs
     [DrawTicks]
     [Increment(0.1f)]
     [Range(0f, 1f)]
-    [DefaultValue(0.7f)]
+    [DefaultValue(1f)]
     public float BoneBuild;
 
     [OnEvent(MemeSoundsEvent.Spawn)]
@@ -142,7 +142,7 @@ namespace MemeSounds.Common.Configs
     [DrawTicks]
     [Increment(0.1f)]
     [Range(0f, 1f)]
-    [DefaultValue(0.7f)]
+    [DefaultValue(1f)]
     public float BrickBuild;
 
     [OnEvent(MemeSoundsEvent.Spawn)]
@@ -150,7 +150,7 @@ namespace MemeSounds.Common.Configs
     [DrawTicks]
     [Increment(0.1f)]
     [Range(0f, 1f)]
-    [DefaultValue(0.7f)]
+    [DefaultValue(1f)]
     public float SystemStartup;
 
     public override void OnChanged()

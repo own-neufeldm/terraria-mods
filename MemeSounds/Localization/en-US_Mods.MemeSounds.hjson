@@ -1,10 +1,44 @@
 Configs: {
 	MemeSoundsClientConfig: {
 		DisplayName: Client
-		Headers.SoundEffects: Sound Effects
+
+		Headers: {
+			DeathSounds: Death Sounds
+			SpawnSounds: Spawn Sounds
+		}
 
 		Ack: {
 			Label: Ack
+			Tooltip: ""
+		}
+
+		BoneBreak: {
+			Label: Bone Break
+			Tooltip: ""
+		}
+
+		BoneBuild: {
+			Label: Bone Build
+			Tooltip: ""
+		}
+
+		BrickBreak: {
+			Label: Brick Break
+			Tooltip: ""
+		}
+
+		BrickBuild: {
+			Label: Brick Build
+			Tooltip: ""
+		}
+
+		BrickDeath: {
+			Label: Brick Death
+			Tooltip: ""
+		}
+
+		CarHorn: {
+			Label: Car Horn
 			Tooltip: ""
 		}
 

@@ -9,15 +9,14 @@ namespace MemeSounds.Common.Configs
 {
   public enum MemeSoundsEvent
   {
-    Disabled,
     Death,
     Spawn,
   }
 
   [AttributeUsage(AttributeTargets.Field)]
-  public class SoundOptionsAttribute(float volume) : Attribute
+  public class OnEventAttribute(MemeSoundsEvent value) : Attribute
   {
-    public float Volume { get; } = volume;
+    public MemeSoundsEvent Value { get; } = value;
   }
 
   public class MemeSoundsClientConfig : ModConfig
@@ -30,43 +29,129 @@ namespace MemeSounds.Common.Configs
     [JsonIgnore]
     public List<SoundStyle> SpawnSounds { get; } = [];
 
-    [Header("SoundEffects")]
+    [Header("DeathSounds")]
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent Ack;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.3f)]
+    public float Ack;
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent Fah;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.5f)]
+    public float BoneBreak;
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent Knocked;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(1f)]
+    public float BrickBreak;
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent MagicFlute;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.5f)]
+    public float BrickDeath;
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent MetalPipe;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.5f)]
+    public float CarHorn;
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent ReverbFart;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.3f)]
+    public float Fah;
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent WrestlingBell;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.3f)]
+    public float Knocked;
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent SystemShutdown;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.7f)]
+    public float MagicFlute;
 
-    [SoundOptions(volume: 1f)]
-    [DefaultValue(MemeSoundsEvent.Spawn)]
-    public MemeSoundsEvent SystemStartup;
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.5f)]
+    public float MetalPipe;
+
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.3f)]
+    public float ReverbFart;
+
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.5f)]
+    public float WrestlingBell;
+
+    [OnEvent(MemeSoundsEvent.Death)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.7f)]
+    public float SystemShutdown;
+
+    [Header("SpawnSounds")]
+
+    [OnEvent(MemeSoundsEvent.Spawn)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.7f)]
+    public float BoneBuild;
+
+    [OnEvent(MemeSoundsEvent.Spawn)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.7f)]
+    public float BrickBuild;
+
+    [OnEvent(MemeSoundsEvent.Spawn)]
+    [Slider]
+    [DrawTicks]
+    [Increment(0.1f)]
+    [Range(0f, 1f)]
+    [DefaultValue(0.7f)]
+    public float SystemStartup;
 
     public override void OnChanged()
     {
@@ -75,21 +160,18 @@ namespace MemeSounds.Common.Configs
 
       foreach (var field in GetType().GetFields())
       {
-        if (field.FieldType != typeof(MemeSoundsEvent)) continue;
-        var onEvent = (MemeSoundsEvent)field.GetValue(this);
-        if (onEvent == MemeSoundsEvent.Disabled) continue;
+        var attribute = Attribute.GetCustomAttribute(field, typeof(OnEventAttribute));
+        if (attribute is not OnEventAttribute onEvent) continue;
 
-        var options = (SoundOptionsAttribute)Attribute.GetCustomAttribute(
-          field,
-          typeof(SoundOptionsAttribute)
-        );
+        var value = (float)field.GetValue(this);
+        if (value == 0f) continue;
         var sound = new SoundStyle($"MemeSounds/Assets/Sounds/{field.Name}")
         {
-          Volume = options.Volume
+          Volume = value
         };
 
-        if (onEvent == MemeSoundsEvent.Death) DeathSounds.Add(sound);
-        if (onEvent == MemeSoundsEvent.Spawn) SpawnSounds.Add(sound);
+        if (onEvent.Value == MemeSoundsEvent.Death) DeathSounds.Add(sound);
+        if (onEvent.Value == MemeSoundsEvent.Spawn) SpawnSounds.Add(sound);
       }
     }
   }

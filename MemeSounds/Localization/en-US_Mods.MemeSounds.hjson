@@ -13,8 +13,13 @@ Configs: {
 			Tooltip: ""
 		}
 
-		FortniteKnocked: {
-			Label: Fortnite Knocked
+		Knocked: {
+			Label: Knocked
+			Tooltip: ""
+		}
+
+		MagicFlute: {
+			Label: Magic Flute
 			Tooltip: ""
 		}
 
@@ -28,18 +33,18 @@ Configs: {
 			Tooltip: ""
 		}
 
-		TheUndertakerBell: {
-			Label: The Undertaker Bell
+		WrestlingBell: {
+			Label: Wrestling Bell
 			Tooltip: ""
 		}
 
-		WindowsXPShutdown: {
-			Label: Windows XP Shutdown
+		SystemShutdown: {
+			Label: System Shutdown
 			Tooltip: ""
 		}
 
-		WindowsXPStartup: {
-			Label: Windows XP Startup
+		SystemStartup: {
+			Label: System Startup
 			Tooltip: ""
 		}
 	}

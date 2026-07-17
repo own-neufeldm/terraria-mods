@@ -32,7 +32,10 @@ namespace MemeSounds.Common.Configs
     public MemeSoundsEvent Fah;
 
     [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent FortniteKnocked;
+    public MemeSoundsEvent Knocked;
+
+    [DefaultValue(MemeSoundsEvent.Death)]
+    public MemeSoundsEvent MagicFlute;
 
     [DefaultValue(MemeSoundsEvent.Death)]
     public MemeSoundsEvent MetalPipe;
@@ -41,13 +44,13 @@ namespace MemeSounds.Common.Configs
     public MemeSoundsEvent ReverbFart;
 
     [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent TheUndertakerBell;
+    public MemeSoundsEvent WrestlingBell;
 
     [DefaultValue(MemeSoundsEvent.Death)]
-    public MemeSoundsEvent WindowsXPShutdown;
+    public MemeSoundsEvent SystemShutdown;
 
     [DefaultValue(MemeSoundsEvent.Spawn)]
-    public MemeSoundsEvent WindowsXPStartup;
+    public MemeSoundsEvent SystemStartup;
 
     public override void OnChanged()
     {

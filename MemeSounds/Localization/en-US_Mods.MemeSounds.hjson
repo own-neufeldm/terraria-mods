@@ -9,77 +9,77 @@ Configs: {
 
 		Ack: {
 			Label: Ack
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		BoneBreak: {
 			Label: Bone Break
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		BoneBuild: {
 			Label: Bone Build
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		BrickBreak: {
 			Label: Brick Break
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		BrickBuild: {
 			Label: Brick Build
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		BrickDeath: {
 			Label: Brick Death
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		CarHorn: {
 			Label: Car Horn
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		Fah: {
 			Label: Fah
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		Knocked: {
 			Label: Knocked
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		MagicFlute: {
 			Label: Magic Flute
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		MetalPipe: {
 			Label: Metal Pipe
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		ReverbFart: {
 			Label: Reverb Fart
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		WrestlingBell: {
 			Label: Wrestling Bell
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		SystemShutdown: {
 			Label: System Shutdown
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 
 		SystemStartup: {
 			Label: System Startup
-			Tooltip: ""
+			Tooltip: Controls the volume, set to 0 to disable.
 		}
 	}
 
@@ -99,6 +99,6 @@ Configs: {
 			Tooltip: Plays when entering the world or respawning.
 		}
 
-		Tooltip: ""
+		Tooltip: Controls the volume, set to 0 to disable.
 	}
 }

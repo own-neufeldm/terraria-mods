@@ -1,5 +1,1 @@
-Configs: {
-	BetterPickaxesClientConfig: {
-		DisplayName: Client
-	}
-}
+Configs.BetterPickaxesClientConfig.DisplayName: Client

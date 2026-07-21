@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Numerics;
 using Terraria;
 using Terraria.ModLoader;
@@ -16,6 +17,11 @@ namespace BetterTooltips.Common
       return $"[c/{GetComparisonColorHex(hovered, equipped)}:{equipped:0.##}]";
     }
 
+    public static string GetComparisonText(int hovered, int equipped)
+    {
+      return $"[c/{GetComparisonColorHex(hovered, equipped)}:{equipped:0}]";
+    }
+
     public static string GetComparisonColorHex<T>(T hovered, T equipped)
       where T : IComparisonOperators<T, T, bool>
     {
@@ -24,14 +30,19 @@ namespace BetterTooltips.Common
       return "FFFF00";                         // yellow
     }
 
-    public static ModItem FindItemByDisplayName(Mod mod, string name)
+    public static ModItem FindItem(Mod mod, string name)
     {
+      var comparator = System.StringComparison.OrdinalIgnoreCase;
+      var items = new List<ModItem>();
       foreach (ILoadable loadable in mod.GetContent())
       {
         if (loadable is not ModItem item) continue;
-        if (item.DisplayName.ToString().Equals(name)) return item;
+        items.Add(item);
+        if (item.Name.Equals(name, comparator)) return item;
       }
-      throw new System.Exception($"Unable to find '{name}' item.");
+      items.Sort((a, b) => a.Name.CompareTo(b.Name));
+      foreach (ModItem item in items) mod.Logger.Debug(item.Name);
+      throw new System.Exception($"Unable to find '{mod.Name}/{name}' item.");
     }
   }
 }

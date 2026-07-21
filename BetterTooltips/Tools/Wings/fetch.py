@@ -19,8 +19,43 @@ class Stat:
     def dump_vanilla(self) -> str:
         return f"Cache.Add({self.id}, new({self.flight_time}f, {self.height}, {self.speed_bonus}f)); // {self.name}"
 
-    def dump_modded(self) -> str:
-        return f'Cache.Add(Utils.FindItemByDisplayName(mod, "{self.name}").Type, new({self.flight_time}f, {self.height}, {self.speed_bonus}f));'
+    def dump_calamity(self) -> str:
+        names = {
+            "Skyline Wings": "SkylineWings",
+            "Starlight Wings": "StarlightWings",
+            "Aureate Booster": "AureateBooster",
+            "Hadarian Wings": "HadarianWings",
+            "Hadal Mantle": "HadalMantle",
+            "Exodus Wings": "ExodusWings",
+            "Tarragon Wings": "TarragonWings",
+            "Elysian Wings": "ElysianWings",
+            "Silva Wings": "SilvaWings",
+            "Wings of Rebirth": "WingsofRebirth",
+            "Soul of Cryogen": "SoulofCryogen",
+            "MOAB": "MOAB",
+            "Moon Walkers": "MoonWalkers",
+            "Void Striders": "VoidStriders",
+            "Seraph Tracers": "SeraphTracers",
+        }
+        return f'Cache.Add(Utils.FindItem(mod, "{names[self.name]}").Type, new({self.flight_time}f, {self.height}, {self.speed_bonus}f)); // {self.name}'
+
+    def dump_thorium(self) -> str:
+        names = {
+            "Champion's Wings": "ChampionWing",
+            "Drider's Grace": "DridersGrace",
+            "Dragon's Wings": "DragonWings",
+            "Flesh Wings": "FleshWings",
+            "Phonic Wings": "PhonicWings",
+            "Titan Wings": "TitanWings",
+            "Subspace Wings": "SubspaceWings",
+            "Dread Wings": "DreadWings",
+            "Demon Blood Wings": "DemonBloodWings",
+            "Terrarium Wings": "TerrariumWings",
+            "Shooting Star Turbo Tuba": "ShootingStarTurboTuba",
+            "Celestial Carrier": "CelestialCarrier",
+            "White Dwarf Thrusters": "WhiteDwarfThrusters",
+        }
+        return f'Cache.Add(Utils.FindItem(mod, "{names[self.name]}").Type, new({self.flight_time}f, {self.height}, {self.speed_bonus}f)); // {self.name}'
 
 
 @app.command()
@@ -94,7 +129,7 @@ def calamity() -> None:
             stats.append(Stat(name, id, flight_time, height, speed_bonus))
 
     for stat in stats:
-        print(stat.dump_modded())
+        print(stat.dump_calamity())
 
     return None
 
@@ -131,7 +166,7 @@ def thorium() -> None:
         stats.append(Stat(name, id, flight_time, height, speed_bonus))
 
     for stat in stats:
-        print(stat.dump_modded())
+        print(stat.dump_thorium())
 
     return None
 

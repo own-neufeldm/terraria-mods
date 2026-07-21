@@ -11,7 +11,7 @@ namespace BetterTooltips.Common.Items
     {
       if (!IsWing(item) || Utils.IsHoveringSocialSlot()) return;
 
-      var empty = Stats.WingStats.Empty();
+      var empty = Stats.WingStat.Empty();
       var hovered = WingSystem.Cache.GetValueOrDefault(item.type, empty);
       var equipped = Main.LocalPlayer.equippedWings is not Item wings ? empty
         : WingSystem.Cache.GetValueOrDefault(wings.type, empty);

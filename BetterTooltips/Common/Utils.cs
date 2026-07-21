@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Numerics;
 using Terraria;
@@ -12,22 +13,52 @@ namespace BetterTooltips.Common
       return Main.HoverItem.social;
     }
 
-    public static string GetComparisonText(float hovered, float equipped)
+    public static int GreaterIsBetter<T>(T a, T b)
+    where T : IComparisonOperators<T, T, bool>
     {
-      return $"[c/{GetComparisonColorHex(hovered, equipped)}:{equipped:0.##}]";
+      if (a > b) return -1;
+      if (a < b) return 1;
+      return 0;
     }
 
-    public static string GetComparisonText(int hovered, int equipped)
+    public static int LessIsBetter<T>(T a, T b)
+where T : IComparisonOperators<T, T, bool>
     {
-      return $"[c/{GetComparisonColorHex(hovered, equipped)}:{equipped:0}]";
+      if (a < b) return -1;
+      if (a > b) return 1;
+      return 0;
     }
 
-    public static string GetComparisonColorHex<T>(T hovered, T equipped)
-      where T : IComparisonOperators<T, T, bool>
+    public static string GetComparisonText(
+      float hovered,
+      float equipped,
+      Func<float, float, int> comparer
+    )
     {
-      if (hovered < equipped) return "FF0000"; // red
-      if (hovered > equipped) return "00FF00"; // green
-      return "FFFF00";                         // yellow
+      var colorHex = GetComparisonColorHex(hovered, equipped, comparer);
+      return $"[c/{colorHex}:{equipped:0.##}]";
+    }
+
+    public static string GetComparisonText(
+      int hovered,
+      int equipped,
+      Func<int, int, int> comparer
+    )
+    {
+      var colorHex = GetComparisonColorHex(hovered, equipped, comparer);
+      return $"[c/{colorHex}:{equipped}]";
+    }
+
+    public static string GetComparisonColorHex<T>(
+      T hovered,
+      T equipped,
+      Func<T, T, int> comparer
+    )
+    {
+      var result = comparer(hovered, equipped);
+      if (result < 0) return "00FF00"; // green
+      if (result > 0) return "FF0000"; // red
+      return "FFFF00";                 // yellow
     }
 
     public static ModItem FindItem(Mod mod, string name)

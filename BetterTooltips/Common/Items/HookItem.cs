@@ -30,21 +30,24 @@ namespace BetterTooltips.Common.Items
 
     private TooltipLine GetReachTooltip(int hovered, int equipped)
     {
-      var comparison = Utils.GetComparisonText(hovered, equipped);
+      var comparer = Utils.GreaterIsBetter<int>;
+      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
       var text = $"Reach: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookReach", text);
     }
 
     private TooltipLine GetVelocityTooltip(int hovered, int equipped)
     {
-      var comparison = Utils.GetComparisonText(hovered, equipped);
+      var comparer = Utils.GreaterIsBetter<int>;
+      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
       var text = $"Velocity: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookVelocity", text);
     }
 
     private TooltipLine GetHooksTooltip(int hovered, int equipped)
     {
-      var comparison = Utils.GetComparisonText(hovered, equipped);
+      var comparer = Utils.GreaterIsBetter<int>;
+      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
       var text = $"Hooks: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookHooks", text);
     }

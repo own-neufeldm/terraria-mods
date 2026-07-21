@@ -19,7 +19,7 @@ namespace BetterTooltips.Common.Items
 
       tooltips.Add(GetFlightTimeTooltip(hovered.FlightTime, equipped.FlightTime));
       tooltips.Add(GetHeightTooltip(hovered.Height, equipped.Height));
-      tooltips.Add(GetSpeedBonusTooltip((int)hovered.SpeedBonus * 100, (int)equipped.SpeedBonus * 100));
+      tooltips.Add(GetSpeedBonusTooltip(hovered.SpeedBonus, equipped.SpeedBonus));
     }
 
     private static bool IsWing(Item item)

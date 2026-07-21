@@ -1,3 +1,4 @@
 displayName = Better Tooltips
 author = Martin
 version = 0.1
+dllReferences = HtmlAgilityPack

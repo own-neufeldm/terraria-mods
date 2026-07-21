@@ -1,0 +1,5 @@
+# csharp dependencies
+lib
+
+# python cache
+.venv

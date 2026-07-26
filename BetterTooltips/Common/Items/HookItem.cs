@@ -17,10 +17,9 @@ namespace BetterTooltips.Common.Items
 
       if (!IsHook(item) || InventoryHelpers.IsHoveringSocialSlot()) return;
 
-      var empty = HookStat.Empty();
-      var hovered = HookSystem.Cache.GetValueOrDefault(item.type, empty);
-      var equipped = Main.LocalPlayer.miscEquips[4] is not Item hook ? empty
-        : HookSystem.Cache.GetValueOrDefault(hook.type, empty);
+      var fallback = HookStat.Empty();
+      var hovered = HookSystem.Cache.GetValueOrDefault(item.type, fallback);
+      var equipped = GetEquippedOrDefault(fallback);
 
       tooltips.Add(GetReachTooltip(hovered.Reach, equipped.Reach));
       tooltips.Add(GetVelocityTooltip(hovered.Velocity, equipped.Velocity));
@@ -32,11 +31,17 @@ namespace BetterTooltips.Common.Items
       return item.shoot != ProjectileID.None && Main.projHook[item.shoot];
     }
 
+    private static HookStat GetEquippedOrDefault(HookStat fallback)
+    {
+      if (Main.LocalPlayer.miscEquips[4] is not Item hook) return fallback;
+      return HookSystem.Cache.GetValueOrDefault(hook.type, fallback);
+    }
+
     private TooltipLine GetReachTooltip(int hovered, int equipped)
     {
       var comparator = ComparisonHelpers.GreaterIsBetter<int>;
       var comparison = ComparisonHelpers.GetText(hovered, equipped, comparator);
-      var text = $"Reach: {hovered} ({comparison})";
+      var text = $"Reach: {hovered} tiles ({comparison})";
       return new TooltipLine(Mod, "HookReach", text);
     }
 
@@ -44,7 +49,7 @@ namespace BetterTooltips.Common.Items
     {
       var comparator = ComparisonHelpers.GreaterIsBetter<int>;
       var comparison = ComparisonHelpers.GetText(hovered, equipped, comparator);
-      var text = $"Velocity: {hovered} ({comparison})";
+      var text = $"Velocity: {hovered} pixels ({comparison})";
       return new TooltipLine(Mod, "HookVelocity", text);
     }
 
@@ -52,7 +57,7 @@ namespace BetterTooltips.Common.Items
     {
       var comparator = ComparisonHelpers.GreaterIsBetter<int>;
       var comparison = ComparisonHelpers.GetText(hovered, equipped, comparator);
-      var text = $"Hooks: {hovered} ({comparison})";
+      var text = $"Hooks: {hovered} at once ({comparison})";
       return new TooltipLine(Mod, "HookHooks", text);
     }
   }

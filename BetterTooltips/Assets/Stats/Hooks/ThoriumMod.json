@@ -1,0 +1,79 @@
+[
+  {
+    "Name": "Zephyr's Grip",
+    "ID": 0,
+    "Reach": 9,
+    "Velocity": 10,
+    "Hooks": 1
+  },
+  {
+    "Name": "Opal Hook",
+    "ID": 0,
+    "Reach": 21,
+    "Velocity": 11,
+    "Hooks": 1
+  },
+  {
+    "Name": "Aquamarine Hook",
+    "ID": 0,
+    "Reach": 22,
+    "Velocity": 11,
+    "Hooks": 1
+  },
+  {
+    "Name": "Spring Hook",
+    "ID": 0,
+    "Reach": 17,
+    "Velocity": 12,
+    "Hooks": 1
+  },
+  {
+    "Name": "Jeweller's Wall Grip",
+    "ID": 0,
+    "Reach": 28,
+    "Velocity": 13,
+    "Hooks": 2
+  },
+  {
+    "Name": "Leviathan",
+    "ID": 0,
+    "Reach": 27,
+    "Velocity": 14,
+    "Hooks": 10
+  },
+  {
+    "Name": "Devil's Reach",
+    "ID": 0,
+    "Reach": 33,
+    "Velocity": 15,
+    "Hooks": 3
+  },
+  {
+    "Name": "Fungal Hook",
+    "ID": 0,
+    "Reach": 30,
+    "Velocity": 16,
+    "Hooks": 3
+  },
+  {
+    "Name": "Neptune's Grasp",
+    "ID": 0,
+    "Reach": 30,
+    "Velocity": 15,
+    "Hooks": 4
+  },
+  {
+    "Name": "Ammutseba's Sash",
+    "ID": 0,
+    "Reach": 30,
+    "Velocity": 15,
+    "Hooks": 1
+  },
+  {
+    "Name": "Ghostly Grapple",
+    "ID": 0,
+    "Reach": 34,
+    "Velocity": 16,
+    "Hooks": 2
+  }
+]

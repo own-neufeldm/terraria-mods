@@ -1,0 +1,191 @@
+[
+  {
+    "Name": "Grappling Hook",
+    "ID": 84,
+    "Reach": 19,
+    "Velocity": 12,
+    "Hooks": 1
+  },
+  {
+    "Name": "Amethyst Hook",
+    "ID": 1236,
+    "Reach": 19,
+    "Velocity": 10,
+    "Hooks": 1
+  },
+  {
+    "Name": "Squirrel Hook",
+    "ID": 4759,
+    "Reach": 19,
+    "Velocity": 12,
+    "Hooks": 1
+  },
+  {
+    "Name": "Topaz Hook",
+    "ID": 1237,
+    "Reach": 21,
+    "Velocity": 11,
+    "Hooks": 1
+  },
+  {
+    "Name": "Sapphire Hook",
+    "ID": 1238,
+    "Reach": 23,
+    "Velocity": 11,
+    "Hooks": 1
+  },
+  {
+    "Name": "Emerald Hook",
+    "ID": 1239,
+    "Reach": 24,
+    "Velocity": 12,
+    "Hooks": 1
+  },
+  {
+    "Name": "Ruby Hook",
+    "ID": 1240,
+    "Reach": 26,
+    "Velocity": 12,
+    "Hooks": 1
+  },
+  {
+    "Name": "Amber Hook",
+    "ID": 4257,
+    "Reach": 26,
+    "Velocity": 13,
+    "Hooks": 1
+  },
+  {
+    "Name": "Diamond Hook",
+    "ID": 1241,
+    "Reach": 28,
+    "Velocity": 13,
+    "Hooks": 1
+  },
+  {
+    "Name": "Web Slinger",
+    "ID": 939,
+    "Reach": 23,
+    "Velocity": 10,
+    "Hooks": 8
+  },
+  {
+    "Name": "Skeletron Hand",
+    "ID": 1273,
+    "Reach": 27,
+    "Velocity": 22,
+    "Hooks": 2
+  },
+  {
+    "Name": "Slime Hook",
+    "ID": 2585,
+    "Reach": 19,
+    "Velocity": 13,
+    "Hooks": 3
+  },
+  {
+    "Name": "Fish Hook",
+    "ID": 2360,
+    "Reach": 25,
+    "Velocity": 13,
+    "Hooks": 3
+  },
+  {
+    "Name": "Ivy Whip",
+    "ID": 185,
+    "Reach": 25,
+    "Velocity": 13,
+    "Hooks": 3
+  },
+  {
+    "Name": "Bat Hook",
+    "ID": 1800,
+    "Reach": 31,
+    "Velocity": 13,
+    "Hooks": 1
+  },
+  {
+    "Name": "Candy Cane Hook",
+    "ID": 1915,
+    "Reach": 25,
+    "Velocity": 12,
+    "Hooks": 1
+  },
+  {
+    "Name": "Dual Hook",
+    "ID": 437,
+    "Reach": 28,
+    "Velocity": 14,
+    "Hooks": 2
+  },
+  {
+    "Name": "Illuminant Hook",
+    "ID": 3022,
+    "Reach": 30,
+    "Velocity": 15,
+    "Hooks": 3
+  },
+  {
+    "Name": "Worm Hook",
+    "ID": 3023,
+    "Reach": 30,
+    "Velocity": 15,
+    "Hooks": 3
+  },
+  {
+    "Name": "Tendon Hook",
+    "ID": 3020,
+    "Reach": 30,
+    "Velocity": 15,
+    "Hooks": 3
+  },
+  {
+    "Name": "Hook of Dissonance",
+    "ID": 4980,
+    "Reach": 31,
+    "Velocity": 16,
+    "Hooks": 1
+  },
+  {
+    "Name": "Static Hook",
+    "ID": 3623,
+    "Reach": 38,
+    "Velocity": 16,
+    "Hooks": 2
+  },
+  {
+    "Name": "Thorn Hook",
+    "ID": 3021,
+    "Reach": 30,
+    "Velocity": 15,
+    "Hooks": 3
+  },
+  {
+    "Name": "Spooky Hook",
+    "ID": 1829,
+    "Reach": 34,
+    "Velocity": 15,
+    "Hooks": 3
+  },
+  {
+    "Name": "Christmas Hook",
+    "ID": 1916,
+    "Reach": 34,
+    "Velocity": 15,
+    "Hooks": 3
+  },
+  {
+    "Name": "Anti-Gravity Hook",
+    "ID": 2800,
+    "Reach": 31,
+    "Velocity": 14,
+    "Hooks": 3
+  },
+  {
+    "Name": "Lunar Hook",
+    "ID": 3572,
+    "Reach": 34,
+    "Velocity": 18,
+    "Hooks": 4
+  }
+]

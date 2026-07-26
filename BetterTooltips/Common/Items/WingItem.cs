@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using BetterTooltips.Common.Stats;
 using BetterTooltips.Common.Systems;
+using BetterTooltips.Helpers;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -14,7 +15,7 @@ namespace BetterTooltips.Common.Items
       // Calamity Mod has its own tooltip for wings
       if (ModLoader.HasMod("CalamityMod")) return;
 
-      if (!IsWing(item) || Utils.IsHoveringSocialSlot()) return;
+      if (!IsWing(item) || InventoryHelpers.IsHoveringSocialSlot()) return;
 
       var empty = WingStat.Empty();
       var hovered = WingSystem.Cache.GetValueOrDefault(item.type, empty);
@@ -36,24 +37,24 @@ namespace BetterTooltips.Common.Items
 
     private TooltipLine GetFlightTimeTooltip(float hovered, float equipped)
     {
-      var comparer = Utils.GreaterIsBetter<float>;
-      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
+      var comparer = ComparisonHelpers.GreaterIsBetter<float>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
       var text = $"Flight time: {hovered:0.##} seconds ({comparison})";
       return new TooltipLine(Mod, "WingFlightTime", text);
     }
 
     private TooltipLine GetHeightTooltip(int hovered, int equipped)
     {
-      var comparer = Utils.GreaterIsBetter<int>;
-      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
+      var comparer = ComparisonHelpers.GreaterIsBetter<int>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
       var text = $"Height: {hovered} tiles ({comparison})";
       return new TooltipLine(Mod, "WingHeight", text);
     }
 
     private TooltipLine GetSpeedBonusTooltip(int hovered, int equipped)
     {
-      var comparer = Utils.GreaterIsBetter<int>;
-      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
+      var comparer = ComparisonHelpers.GreaterIsBetter<int>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
       var text = $"Speed bonus: +{hovered}% ({comparison})";
       return new TooltipLine(Mod, "WingSpeedBonus", text);
     }

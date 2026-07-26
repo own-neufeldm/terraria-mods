@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using BetterTooltips.Common.Stats;
+using BetterTooltips.Helpers;
 using Terraria.ModLoader;
 
 namespace BetterTooltips.Common.Systems
@@ -50,27 +51,27 @@ namespace BetterTooltips.Common.Systems
     {
       if (!ModLoader.TryGetMod("CalamityMod", out Mod mod)) return;
 
-      // Cache.Add(Utils.FindItem(mod, "BetterToolTips/debug").Type, HookStat.Empty());
-      Cache.Add(Utils.FindItem(mod, "SerpentsBite").Type, new(28, 18, 2)); // Serpent's Bite
-      Cache.Add(Utils.FindItem(mod, "BobbitHook").Type, new(40, 25, 1)); // Bobbit Hook
+      // Cache.Add(ContentHelpers.FindItem(mod, "BetterToolTips/debug").Type, HookStat.Empty());
+      Cache.Add(ContentHelpers.FindItem(mod, "SerpentsBite").Type, new(28, 18, 2)); // Serpent's Bite
+      Cache.Add(ContentHelpers.FindItem(mod, "BobbitHook").Type, new(40, 25, 1)); // Bobbit Hook
     }
 
     private static void AddThoriumMod()
     {
       if (!ModLoader.TryGetMod("ThoriumMod", out Mod mod)) return;
 
-      // Cache.Add(Utils.FindItem(mod, "BetterToolTips/debug").Type, HookStat.Empty());
-      Cache.Add(Utils.FindItem(mod, "ZephyrsGrip").Type, new(9, 10, 1)); // Zephyr's Grip
-      Cache.Add(Utils.FindItem(mod, "OpalHook").Type, new(21, 11, 1)); // Opal Hook
-      Cache.Add(Utils.FindItem(mod, "AquamarineHook").Type, new(22, 11, 1)); // Aquamarine Hook
-      Cache.Add(Utils.FindItem(mod, "SpringHook").Type, new(17, 12, 1)); // Spring Hook
-      Cache.Add(Utils.FindItem(mod, "JewellersWallGrip").Type, new(28, 13, 2)); // Jeweller's Wall Grip
-      Cache.Add(Utils.FindItem(mod, "Leviathan").Type, new(27, 14, 10)); // Leviathan
-      Cache.Add(Utils.FindItem(mod, "DevilsReach").Type, new(33, 15, 3)); // Devil's Reach
-      Cache.Add(Utils.FindItem(mod, "FungalHook").Type, new(30, 16, 3)); // Fungal Hook
-      Cache.Add(Utils.FindItem(mod, "NeptuneGrasp").Type, new(30, 15, 4)); // Neptune's Grasp
-      Cache.Add(Utils.FindItem(mod, "AmmutsebaSash").Type, new(30, 15, 1)); // Ammutseba's Sash
-      Cache.Add(Utils.FindItem(mod, "GhostlyGrapple").Type, new(34, 16, 2)); // Ghostly Grapple
+      // Cache.Add(ContentHelpers.FindItem(mod, "BetterToolTips/debug").Type, HookStat.Empty());
+      Cache.Add(ContentHelpers.FindItem(mod, "ZephyrsGrip").Type, new(9, 10, 1)); // Zephyr's Grip
+      Cache.Add(ContentHelpers.FindItem(mod, "OpalHook").Type, new(21, 11, 1)); // Opal Hook
+      Cache.Add(ContentHelpers.FindItem(mod, "AquamarineHook").Type, new(22, 11, 1)); // Aquamarine Hook
+      Cache.Add(ContentHelpers.FindItem(mod, "SpringHook").Type, new(17, 12, 1)); // Spring Hook
+      Cache.Add(ContentHelpers.FindItem(mod, "JewellersWallGrip").Type, new(28, 13, 2)); // Jeweller's Wall Grip
+      Cache.Add(ContentHelpers.FindItem(mod, "Leviathan").Type, new(27, 14, 10)); // Leviathan
+      Cache.Add(ContentHelpers.FindItem(mod, "DevilsReach").Type, new(33, 15, 3)); // Devil's Reach
+      Cache.Add(ContentHelpers.FindItem(mod, "FungalHook").Type, new(30, 16, 3)); // Fungal Hook
+      Cache.Add(ContentHelpers.FindItem(mod, "NeptuneGrasp").Type, new(30, 15, 4)); // Neptune's Grasp
+      Cache.Add(ContentHelpers.FindItem(mod, "AmmutsebaSash").Type, new(30, 15, 1)); // Ammutseba's Sash
+      Cache.Add(ContentHelpers.FindItem(mod, "GhostlyGrapple").Type, new(34, 16, 2)); // Ghostly Grapple
     }
   }
 }

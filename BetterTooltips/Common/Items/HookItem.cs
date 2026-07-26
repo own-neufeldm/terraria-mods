@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using BetterTooltips.Common.Stats;
 using BetterTooltips.Common.Systems;
+using BetterTooltips.Helpers;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,7 +12,7 @@ namespace BetterTooltips.Common.Items
   {
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-      if (!IsHook(item) || Utils.IsHoveringSocialSlot()) return;
+      if (!IsHook(item) || InventoryHelpers.IsHoveringSocialSlot()) return;
 
       var empty = HookStat.Empty();
       var hovered = HookSystem.Cache.GetValueOrDefault(item.type, empty);
@@ -30,24 +31,24 @@ namespace BetterTooltips.Common.Items
 
     private TooltipLine GetReachTooltip(int hovered, int equipped)
     {
-      var comparer = Utils.GreaterIsBetter<int>;
-      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
+      var comparer = ComparisonHelpers.GreaterIsBetter<int>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
       var text = $"Reach: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookReach", text);
     }
 
     private TooltipLine GetVelocityTooltip(int hovered, int equipped)
     {
-      var comparer = Utils.GreaterIsBetter<int>;
-      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
+      var comparer = ComparisonHelpers.GreaterIsBetter<int>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
       var text = $"Velocity: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookVelocity", text);
     }
 
     private TooltipLine GetHooksTooltip(int hovered, int equipped)
     {
-      var comparer = Utils.GreaterIsBetter<int>;
-      var comparison = Utils.GetComparisonText(hovered, equipped, comparer);
+      var comparer = ComparisonHelpers.GreaterIsBetter<int>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
       var text = $"Hooks: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookHooks", text);
     }

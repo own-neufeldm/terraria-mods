@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using BetterTooltips.Common.Stats;
+using BetterTooltips.Helpers;
 using Newtonsoft.Json;
 using Terraria.ModLoader;
 
@@ -17,7 +18,7 @@ namespace BetterTooltips.Common.Systems
 
     private static void LoadVanillaStats()
     {
-      var json = Utils.ReadFile("Assets/Stats/Wings/Vanilla.json");
+      var json = ContentHelpers.ReadFile("Assets/Stats/Wings/Vanilla.json");
       var stats = JsonConvert.DeserializeObject<List<WingStat>>(json);
       foreach (var stat in stats) Cache.Add(stat.ID, stat);
     }
@@ -26,7 +27,7 @@ namespace BetterTooltips.Common.Systems
     {
       if (!ModLoader.TryGetMod("ThoriumMod", out Mod mod)) return;
 
-      var json = Utils.ReadFile("Assets/Stats/Wings/ThoriumMod.json");
+      var json = ContentHelpers.ReadFile("Assets/Stats/Wings/ThoriumMod.json");
       var stats = JsonConvert.DeserializeObject<List<WingStat>>(json);
       var names = new Dictionary<string, string>
       {

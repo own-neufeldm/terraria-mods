@@ -1,4 +1,4 @@
 displayName = Better Tooltips
 author = Martin
 version = 0.1
-buildIgnore = Tools\*
+buildIgnore = scripts\*

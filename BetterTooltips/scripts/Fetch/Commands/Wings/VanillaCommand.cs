@@ -1,71 +1,39 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
+using Fetch.Helpers;
+using Fetch.Models;
 using HtmlAgilityPack;
-using Newtonsoft.Json;
-using Spectre.Console;
 using Spectre.Console.Cli;
 
-namespace Tools.Commands
+namespace Fetch.Commands.Wings
 {
-  public enum ModTarget
-  {
-    vanilla,
-    thorium,
-  }
+  public class VanillaSettings : CommandSettings { }
 
-  public record WingStat(
-    string Name,
-    int ID,
-    float FlightTime,
-    int Height,
-    int SpeedBonus
-  );
-
-  public class WingsSettings : CommandSettings
-  {
-    [CommandOption("--mod")]
-    [Description("Fetch data for this mod")]
-    [DefaultValue(ModTarget.vanilla)]
-    public ModTarget ModTarget { get; init; } = ModTarget.vanilla;
-  }
-
-  [Description("Fetch wiki data for wings")]
-  public class WingsCommand : Command<WingsSettings>
+  [Description("Fetch stats for Vanilla wings")]
+  public class VanillaCommand : Command<VanillaSettings>
   {
     protected override int Execute(
       CommandContext context,
-      WingsSettings settings,
-      CancellationToken cancellation
+      VanillaSettings settings,
+      CancellationToken cancellationToken
     )
     {
-      if (settings.ModTarget == ModTarget.vanilla)
-      {
-        var data = DownloadData("https://terraria.wiki.gg/wiki/Wings/List");
-        var stats = ParseVanillaStats(data.DocumentNode);
-        WriteStats(stats, "Vanilla.json");
-        return 0;
-      }
-
-      var message = $"Mod '{settings.ModTarget}' is not implemented.";
-      AnsiConsole.WriteException(new NotImplementedException(message));
-      return 1;
+      var url = "https://terraria.wiki.gg/wiki/Wings/List";
+      var document = HtmlHelpers.GetWebDocument(url);
+      var stats = ParseStats(document.DocumentNode);
+      var path = Path.Join("Stats", "Wings", "Vanilla.json");
+      AssetHelpers.WriteJson(stats, path);
+      return 0;
     }
 
-    private static HtmlDocument DownloadData(string url)
-    {
-      return new HtmlWeb { UserAgent = "dotnet/htmlagilitypack" }.Load(url);
-    }
-
-    // https://thoriummod.wiki.gg/wiki/Wings [2]
 #pragma warning disable SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
-    private static List<WingStat> ParseVanillaStats(HtmlNode root)
+    private static List<WingModel> ParseStats(HtmlNode root)
     {
-      var stats = new List<WingStat>();
+      var stats = new List<WingModel>();
       var table = root.SelectNodes("//table[1]")[0];
 
       foreach (HtmlNode row in table.SelectNodes(".//tr"))
@@ -99,12 +67,5 @@ namespace Tools.Commands
       return stats;
     }
 #pragma warning restore SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
-
-    private static void WriteStats(object stats, string fileName)
-    {
-      var path = Path.Join("..", "Assets", "Stats", "Wings", fileName);
-      var json = JsonConvert.SerializeObject(stats, Formatting.Indented);
-      File.WriteAllText(path, json);
-    }
   }
 }

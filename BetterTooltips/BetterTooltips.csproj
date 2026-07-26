@@ -10,9 +10,9 @@
 
   <!-- References -->
   <ItemGroup>
-    <Compile Remove="Tools\**" />
-    <Content Remove="Tools\**" />
-    <None Remove="Tools\**" />
+    <Compile Remove="scripts\**" />
+    <Content Remove="scripts\**" />
+    <None Remove="scripts\**" />
   </ItemGroup>
 
 </Project>

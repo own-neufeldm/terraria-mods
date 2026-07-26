@@ -16,10 +16,9 @@ namespace BetterTooltips.Common.Items
 
       if (!IsWing(item) || InventoryHelpers.IsHoveringSocialSlot()) return;
 
-      var empty = WingStat.Empty();
-      var hovered = WingSystem.Cache.GetValueOrDefault(item.type, empty);
-      var equipped = Main.LocalPlayer.equippedWings is not Item wings ? empty
-        : WingSystem.Cache.GetValueOrDefault(wings.type, empty);
+      var fallback = WingStat.Empty();
+      var hovered = WingSystem.Cache.GetValueOrDefault(item.type, fallback);
+      var equipped = GetEquippedOrDefault(fallback);
 
       tooltips.Add(GetFlightTimeTooltip(hovered.FlightTime, equipped.FlightTime));
       tooltips.Add(GetHeightTooltip(hovered.Height, equipped.Height));
@@ -29,6 +28,12 @@ namespace BetterTooltips.Common.Items
     private static bool IsWing(Item item)
     {
       return item.wingSlot > 0;
+    }
+
+    private static WingStat GetEquippedOrDefault(WingStat fallback)
+    {
+      if (Main.LocalPlayer.equippedWings is not Item wings) return fallback;
+      return WingSystem.Cache.GetValueOrDefault(wings.type, fallback);
     }
 
     private TooltipLine GetFlightTimeTooltip(float hovered, float equipped)

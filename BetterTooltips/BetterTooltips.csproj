@@ -10,7 +10,9 @@
 
   <!-- References -->
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.12.4" />
+    <Compile Remove="Tools\**" />
+    <Content Remove="Tools\**" />
+    <None Remove="Tools\**" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ namespace Fetch.Helpers
   {
     public static string GetDirectory()
     {
-      return Path.Join("..", "..", "Assets");
+      return "../../Assets";
     }
 
     public static void WriteJson(object data, string path)

@@ -12,7 +12,7 @@ namespace BetterTooltips.Common.Items
   {
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
-      // Calamity Mod has its own tooltips for wings
+      // Calamity Mod has its own tooltips for hooks
       if (ModLoader.HasMod("CalamityMod")) return;
 
       if (!IsHook(item) || InventoryHelpers.IsHoveringSocialSlot()) return;

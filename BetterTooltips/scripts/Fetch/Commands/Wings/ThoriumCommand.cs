@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
 using Fetch.Helpers;
@@ -25,8 +24,7 @@ namespace Fetch.Commands.Wings
       var url = "https://thoriummod.wiki.gg/wiki/Wings";
       var document = HtmlHelpers.GetWebDocument(url);
       var stats = ParseStats(document.DocumentNode);
-      var path = Path.Join("Stats", "Wings", "ThoriumMod.json");
-      AssetHelpers.WriteJson(stats, path);
+      AssetHelpers.WriteJson(stats, "Stats/Wings/ThoriumMod.json");
       return 0;
     }
 

@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace MemeSounds.Common.Players
@@ -17,38 +18,14 @@ namespace MemeSounds.Common.Players
       PlayerDeathReason damageSource
     )
     {
+      if (Main.netMode == NetmodeID.Server) return;
       var config = ModContent.GetInstance<MemeSoundsClientConfig>();
       PlayRandomSound(config.DeathSounds, LastPosition(Player));
-    }
-
-    public override void PlayerDisconnect()
-    {
-      if (Main.myPlayer == Player.whoAmI) return;
-      var config = ModContent.GetInstance<MemeSoundsClientConfig>();
-      PlayRandomSound(config.DeathSounds, LastPosition(Player));
-    }
-
-    public override void PreSavePlayer()
-    {
-      var config = ModContent.GetInstance<MemeSoundsClientConfig>();
-      PlayRandomSound(config.DeathSounds, LastPosition(Player));
-    }
-
-    public override void OnEnterWorld()
-    {
-      var config = ModContent.GetInstance<MemeSoundsClientConfig>();
-      PlayRandomSound(config.SpawnSounds, SpawnPosition(Player));
     }
 
     public override void OnRespawn()
     {
-      var config = ModContent.GetInstance<MemeSoundsClientConfig>();
-      PlayRandomSound(config.SpawnSounds, SpawnPosition(Player));
-    }
-
-    public override void PlayerConnect()
-    {
-      if (Main.myPlayer == Player.whoAmI) return;
+      if (Main.netMode == NetmodeID.Server) return;
       var config = ModContent.GetInstance<MemeSoundsClientConfig>();
       PlayRandomSound(config.SpawnSounds, SpawnPosition(Player));
     }

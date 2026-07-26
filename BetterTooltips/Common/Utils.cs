@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Text;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -63,7 +64,7 @@ where T : IComparisonOperators<T, T, bool>
 
     public static ModItem FindItem(Mod mod, string name)
     {
-      var comparator = System.StringComparison.OrdinalIgnoreCase;
+      var comparator = StringComparison.OrdinalIgnoreCase;
       var items = new List<ModItem>();
       foreach (ILoadable loadable in mod.GetContent())
       {
@@ -73,7 +74,14 @@ where T : IComparisonOperators<T, T, bool>
       }
       items.Sort((a, b) => a.Name.CompareTo(b.Name));
       foreach (ModItem item in items) mod.Logger.Debug(item.Name);
-      throw new System.Exception($"Unable to find '{mod.Name}/{name}' item.");
+      throw new Exception($"Unable to find '{mod.Name}/{name}' item.");
+    }
+
+    public static string ReadFile(string path)
+    {
+      var mod = ModContent.GetInstance<BetterTooltips>();
+      var bytes = mod.GetFileBytes(path);
+      return Encoding.UTF8.GetString(bytes);
     }
   }
 }

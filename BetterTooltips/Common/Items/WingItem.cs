@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using BetterTooltips.Common.Stats;
 using BetterTooltips.Common.Systems;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace BetterTooltips.Common.Items
@@ -10,6 +11,9 @@ namespace BetterTooltips.Common.Items
   {
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
+      // Calamity Mod has its own tooltip for wings
+      if (ModLoader.HasMod("CalamityMod")) return;
+
       if (!IsWing(item) || Utils.IsHoveringSocialSlot()) return;
 
       var empty = WingStat.Empty();
@@ -17,9 +21,12 @@ namespace BetterTooltips.Common.Items
       var equipped = Main.LocalPlayer.equippedWings is not Item wings ? empty
         : WingSystem.Cache.GetValueOrDefault(wings.type, empty);
 
-      tooltips.Add(GetFlightTimeTooltip(hovered.FlightTime, equipped.FlightTime));
-      tooltips.Add(GetHeightTooltip(hovered.Height, equipped.Height));
-      tooltips.Add(GetSpeedBonusTooltip(hovered.SpeedBonus, equipped.SpeedBonus));
+      var index = Main.GameMode == GameModeID.Creative ? tooltips.Count - 1 : tooltips.Count;
+      tooltips.InsertRange(index, [
+        GetFlightTimeTooltip(hovered.FlightTime, equipped.FlightTime),
+        GetHeightTooltip(hovered.Height, equipped.Height),
+        GetSpeedBonusTooltip(hovered.SpeedBonus, equipped.SpeedBonus),
+      ]);
     }
 
     private static bool IsWing(Item item)

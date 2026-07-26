@@ -12,6 +12,9 @@ namespace BetterTooltips.Common.Items
   {
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
+      // Calamity Mod has its own tooltips for wings
+      if (ModLoader.HasMod("CalamityMod")) return;
+
       if (!IsHook(item) || InventoryHelpers.IsHoveringSocialSlot()) return;
 
       var empty = HookStat.Empty();
@@ -31,24 +34,24 @@ namespace BetterTooltips.Common.Items
 
     private TooltipLine GetReachTooltip(int hovered, int equipped)
     {
-      var comparer = ComparisonHelpers.GreaterIsBetter<int>;
-      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
+      var comparator = ComparisonHelpers.GreaterIsBetter<int>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparator);
       var text = $"Reach: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookReach", text);
     }
 
     private TooltipLine GetVelocityTooltip(int hovered, int equipped)
     {
-      var comparer = ComparisonHelpers.GreaterIsBetter<int>;
-      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
+      var comparator = ComparisonHelpers.GreaterIsBetter<int>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparator);
       var text = $"Velocity: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookVelocity", text);
     }
 
     private TooltipLine GetHooksTooltip(int hovered, int equipped)
     {
-      var comparer = ComparisonHelpers.GreaterIsBetter<int>;
-      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparer);
+      var comparator = ComparisonHelpers.GreaterIsBetter<int>;
+      var comparison = ComparisonHelpers.GetText(hovered, equipped, comparator);
       var text = $"Hooks: {hovered} ({comparison})";
       return new TooltipLine(Mod, "HookHooks", text);
     }

@@ -9,5 +9,10 @@ namespace Fetch.Helpers
       var web = new HtmlWeb { UserAgent = "dotnet/htmlagilitypack" };
       return web.Load(url);
     }
+
+    public static string GetInnerText(HtmlNode node)
+    {
+      return HtmlEntity.DeEntitize(node.InnerText).Trim();
+    }
   }
 }

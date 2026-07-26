@@ -1,0 +1,93 @@
+[
+  {
+    "Name": "Champion's Wings",
+    "ID": 0,
+    "FlightTime": 1.0,
+    "Height": 34,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Drider's Grace",
+    "ID": 0,
+    "FlightTime": 0.75,
+    "Height": 28,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Dragon's Wings",
+    "ID": 0,
+    "FlightTime": 2.33,
+    "Height": 72,
+    "SpeedBonus": 133
+  },
+  {
+    "Name": "Flesh Wings",
+    "ID": 0,
+    "FlightTime": 2.33,
+    "Height": 72,
+    "SpeedBonus": 133
+  },
+  {
+    "Name": "Phonic Wings",
+    "ID": 0,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 133
+  },
+  {
+    "Name": "Titan Wings",
+    "ID": 0,
+    "FlightTime": 2.67,
+    "Height": 72,
+    "SpeedBonus": 133
+  },
+  {
+    "Name": "Subspace Wings",
+    "ID": 0,
+    "FlightTime": 2.5,
+    "Height": 72,
+    "SpeedBonus": 133
+  },
+  {
+    "Name": "Dread Wings",
+    "ID": 0,
+    "FlightTime": 2.67,
+    "Height": 72,
+    "SpeedBonus": 150
+  },
+  {
+    "Name": "Demon Blood Wings",
+    "ID": 0,
+    "FlightTime": 2.67,
+    "Height": 72,
+    "SpeedBonus": 150
+  },
+  {
+    "Name": "Terrarium Wings",
+    "ID": 0,
+    "FlightTime": 3.0,
+    "Height": 187,
+    "SpeedBonus": 167
+  },
+  {
+    "Name": "Shooting Star Turbo Tuba",
+    "ID": 0,
+    "FlightTime": 2.67,
+    "Height": 151,
+    "SpeedBonus": 117
+  },
+  {
+    "Name": "Celestial Carrier",
+    "ID": 0,
+    "FlightTime": 2.67,
+    "Height": 151,
+    "SpeedBonus": 117
+  },
+  {
+    "Name": "White Dwarf Thrusters",
+    "ID": 0,
+    "FlightTime": 2.67,
+    "Height": 151,
+    "SpeedBonus": 233
+  }
+]

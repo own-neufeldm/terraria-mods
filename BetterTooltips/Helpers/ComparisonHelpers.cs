@@ -24,30 +24,30 @@ namespace BetterTooltips.Helpers
     public static string GetText(
       float hovered,
       float equipped,
-      Func<float, float, int> comparer
+      Func<float, float, int> comparator
     )
     {
-      var colorHex = GetColorHex(hovered, equipped, comparer);
+      var colorHex = GetColorHex(hovered, equipped, comparator);
       return $"[c/{colorHex}:{equipped:0.##}]";
     }
 
     public static string GetText(
       int hovered,
       int equipped,
-      Func<int, int, int> comparer
+      Func<int, int, int> comparator
     )
     {
-      var colorHex = GetColorHex(hovered, equipped, comparer);
+      var colorHex = GetColorHex(hovered, equipped, comparator);
       return $"[c/{colorHex}:{equipped}]";
     }
 
     public static string GetColorHex<T>(
       T hovered,
       T equipped,
-      Func<T, T, int> comparer
+      Func<T, T, int> comparator
     )
     {
-      var result = comparer(hovered, equipped);
+      var result = comparator(hovered, equipped);
       if (result < 0) return "00FF00"; // green
       if (result > 0) return "FF0000"; // red
       return "FFFF00";                 // yellow

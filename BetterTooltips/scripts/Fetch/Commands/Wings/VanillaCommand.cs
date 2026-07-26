@@ -22,7 +22,7 @@ namespace Fetch.Commands.Wings
       CancellationToken cancellationToken
     )
     {
-      var url = "https://terraria.wiki.gg/wiki/Wings/List";
+      var url = "https://terraria.wiki.gg/wiki/Wings";
       var document = HtmlHelpers.GetWebDocument(url);
       var stats = ParseStats(document.DocumentNode);
       var path = Path.Join("Stats", "Wings", "Vanilla.json");
@@ -30,41 +30,55 @@ namespace Fetch.Commands.Wings
       return 0;
     }
 
-#pragma warning disable SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
     private static List<WingModel> ParseStats(HtmlNode root)
     {
       var stats = new List<WingModel>();
-      var table = root.SelectNodes("//table[1]")[0];
+      var table = root.SelectNodes("//table")[1];
 
-      foreach (HtmlNode row in table.SelectNodes(".//tr"))
+      foreach (var row in table.SelectNodes(".//tr"))
       {
         var cols = row.SelectNodes(".//td");
         if (cols == null) continue;
-
-        string value = HtmlEntity.DeEntitize(cols[1].InnerText).Trim();
-        var match = Regex.Match(value, @"(?<name>.+)\s*Internal\s*Item\s*ID:\s*(?<id>.+)");
-        string name = match.Groups["name"].Value;
-        int id = int.Parse(match.Groups["id"].Value);
-
-        value = HtmlEntity.DeEntitize(cols[4].InnerText).Trim();
-        match = Regex.Match(value, @"(?<value>[\d.]+)");
-        float flightTime = float.Parse(
-          match.Groups["value"].Value,
-          CultureInfo.InvariantCulture
-        );
-
-        value = HtmlEntity.DeEntitize(cols[5].InnerText).Trim();
-        match = Regex.Match(value, @"(?<value>\d+)");
-        int height = int.Parse(match.Groups["value"].Value);
-
-        value = HtmlEntity.DeEntitize(cols[7].InnerText).Trim();
-        match = Regex.Match(value, @"(?<value>\d+)");
-        int speedBonus = int.Parse(match.Groups["value"].Value) - 100;
-
-        stats.Add(new(name, id, flightTime, height, speedBonus));
+        (var name, var id) = ParseNameAndID(cols[1]);
+        stats.Add(new(
+          Name: name,
+          ID: id,
+          FlightTime: ParseFlightTime(cols[4]),
+          Height: ParseHeight(cols[5]),
+          SpeedBonus: ParseSpeedBonus(cols[7])
+        ));
       }
 
       return stats;
+    }
+
+#pragma warning disable SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
+    private static (string, int) ParseNameAndID(HtmlNode col)
+    {
+      var value = HtmlHelpers.GetInnerText(col);
+      var match = Regex.Match(value, @"(?<name>.+)\s*Internal\s*Item\s*ID:\s*(?<id>.+)");
+      return (match.Groups["name"].Value, int.Parse(match.Groups["id"].Value));
+    }
+
+    private static float ParseFlightTime(HtmlNode col)
+    {
+      var value = HtmlHelpers.GetInnerText(col);
+      var match = Regex.Match(value, @"(?<value>[\d.]+)");
+      return float.Parse(match.Groups["value"].Value, CultureInfo.InvariantCulture);
+    }
+
+    private static int ParseHeight(HtmlNode col)
+    {
+      var value = HtmlHelpers.GetInnerText(col);
+      var match = Regex.Match(value, @"(?<value>\d+)");
+      return int.Parse(match.Groups["value"].Value);
+    }
+
+    private static int ParseSpeedBonus(HtmlNode col)
+    {
+      var value = HtmlHelpers.GetInnerText(col);
+      var match = Regex.Match(value, @"(?<value>\d+)");
+      return int.Parse(match.Groups["value"].Value) - 100;
     }
 #pragma warning restore SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
   }

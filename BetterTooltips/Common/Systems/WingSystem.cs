@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.IO;
 using BetterTooltips.Common.Stats;
-using HtmlAgilityPack;
+using Newtonsoft.Json;
 using Terraria.ModLoader;
 
 namespace BetterTooltips.Common.Systems
@@ -12,66 +12,17 @@ namespace BetterTooltips.Common.Systems
 
     public override void PostSetupContent()
     {
-      AddVanilla();
+      LoadVanillaStats();
       // AddCalamityMod();
       // AddThoriumMod();
     }
 
-#pragma warning disable SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
-    private static void AddVanilla()
+    private static void LoadVanillaStats()
     {
-      // Mod mod = ModLoader.GetMod("BetterTooltips");
-      // mod.Logger.Debug("Fetching wiki data...");
-
-      var web = new HtmlWeb
-      {
-        UserAgent = "dotnet-httpagilitypack/1.12.4"
-      };
-      var doc = web.Load("https://terraria.wiki.gg/wiki/Wings/List");
-
-      // mod.Logger.Debug("Selecting table...");
-      var rows = doc.DocumentNode.SelectNodes("//table//tr");
-      if (rows == null) return;
-
-      // mod.Logger.Debug("Parsing table data...");
-      for (int i = 1; i < rows.Count; i++)
-      {
-        // mod.Logger.Debug("Selecting columns...");
-        var cols = rows[i].SelectNodes("td|th");
-        if (cols == null || cols.Count < 8) continue;
-
-        // mod.Logger.Debug("Parsing name and type...");
-        string value = HtmlEntity.DeEntitize(cols[1].InnerText).Trim();
-        // mod.Logger.Debug($"  value='{value}'");
-        var match = Regex.Match(value, @"(?<name>.+)\s*Internal\s*Item\s*ID:\s*(?<id>.+)");
-        string name = match.Groups["name"].Value;
-        int id = int.Parse(match.Groups["id"].Value);
-        // mod.Logger.Debug($"  name='{name}' | id={id}");
-
-        // mod.Logger.Debug("Parsing flight time...");
-        value = HtmlEntity.DeEntitize(cols[4].InnerText).Trim();
-        // mod.Logger.Debug($"  value='{value}'");
-        match = Regex.Match(value, @"([\d.]+)");
-        float flightTime = float.Parse(match.Groups[0].Value);
-        // mod.Logger.Debug($"  flightTime={flightTime}");
-
-        // mod.Logger.Debug("Parsing height...");
-        value = HtmlEntity.DeEntitize(cols[5].InnerText).Trim();
-        // mod.Logger.Debug($"  value='{value}'");
-        match = Regex.Match(value, @"(\d+)");
-        int height = int.Parse(match.Groups[0].Value);
-        // mod.Logger.Debug($"  height={height}");
-
-        // mod.Logger.Debug("Parsing speed bonus...");
-        value = HtmlEntity.DeEntitize(cols[7].InnerText).Trim();
-        // mod.Logger.Debug($"  value='{value}'");
-        match = Regex.Match(value, @"\d+");
-        int speedBonus = int.Parse(match.Value) - 100;
-        // mod.Logger.Debug($"  speedBonus={speedBonus}");
-
-        // mod.Logger.Debug($"Adding '{name}' to cache...");
-        Cache.Add(id, new(flightTime, height, speedBonus));
-      }
+      var path = @"C:\Users\Martin\repos\own-neufeldm\terraria-mods\BetterTooltips\Assets\Stats\Wings\Vanilla.json";
+      string json = File.ReadAllText(path);
+      var stats = JsonConvert.DeserializeObject<List<WingStat>>(json);
+      foreach (WingStat stat in stats) Cache.Add(stat.ID, stat);
     }
 
     // private static void AddCalamityMod()
@@ -115,6 +66,5 @@ namespace BetterTooltips.Common.Systems
     //   Cache.Add(Utils.FindItem(mod, "CelestialCarrier").Type, new(2.0f, 151, 1.17f)); // Celestial Carrier
     //   Cache.Add(Utils.FindItem(mod, "WhiteDwarfThrusters").Type, new(2.0f, 151, 2.33f)); // White Dwarf Thrusters
     // }
-#pragma warning restore SYSLIB1045 // Convert to 'GeneratedRegexAttribute'.
   }
 }

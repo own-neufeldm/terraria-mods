@@ -1,0 +1,359 @@
+[
+  {
+    "Name": "Fledgling Wings",
+    "ID": 4978,
+    "FlightTime": 0.42,
+    "Height": 18,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Angel Wings",
+    "ID": 493,
+    "FlightTime": 1.67,
+    "Height": 53,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Demon Wings",
+    "ID": 492,
+    "FlightTime": 1.67,
+    "Height": 53,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Fairy Wings",
+    "ID": 761,
+    "FlightTime": 2.17,
+    "Height": 67,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Fin Wings",
+    "ID": 2494,
+    "FlightTime": 2.17,
+    "Height": 67,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Frozen Wings",
+    "ID": 822,
+    "FlightTime": 2.17,
+    "Height": 67,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Harpy Wings",
+    "ID": 785,
+    "FlightTime": 2.17,
+    "Height": 67,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Jetpack",
+    "ID": 748,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Chippy's Cloak",
+    "ID": 5627,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Heroicis' Wings",
+    "ID": 5659,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Red's Wings",
+    "ID": 665,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "D-Town's Wings",
+    "ID": 1583,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Will's Wings",
+    "ID": 1584,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Crowno's Wings",
+    "ID": 1585,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Cenx's Wings",
+    "ID": 1586,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Lazure's Barrier Platform",
+    "ID": 3228,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Yoraiz0r's Spell",
+    "ID": 3580,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Jim's Wings",
+    "ID": 3582,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Skiphs' Paws",
+    "ID": 3588,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Loki's Wings",
+    "ID": 3592,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Arkhalis' Lightwings",
+    "ID": 3924,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Leinfors' Prehensile Cloak",
+    "ID": 3928,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Ghostar's Infinity Eight",
+    "ID": 4730,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Safeman's Blanket Cape",
+    "ID": 4746,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "FoodBarbarian's Tattered Dragon Wings",
+    "ID": 4750,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Grox The Great's Wings",
+    "ID": 4754,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Luna's Runic Pixie Wings",
+    "ID": 6140,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Kazzymodus' Wings",
+    "ID": 5686,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Chicken Bones' Wings",
+    "ID": 5586,
+    "FlightTime": 2.5,
+    "Height": 77,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Leaf Wings",
+    "ID": 1162,
+    "FlightTime": 2.67,
+    "Height": 81,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Bat Wings",
+    "ID": 1165,
+    "FlightTime": 2.67,
+    "Height": 81,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Bee Wings",
+    "ID": 1515,
+    "FlightTime": 2.67,
+    "Height": 81,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Butterfly Wings",
+    "ID": 749,
+    "FlightTime": 2.67,
+    "Height": 81,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Flame Wings",
+    "ID": 821,
+    "FlightTime": 2.67,
+    "Height": 81,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Hoverboard",
+    "ID": 1866,
+    "FlightTime": 2.83,
+    "Height": 94,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Bone Wings",
+    "ID": 786,
+    "FlightTime": 2.83,
+    "Height": 94,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Mothron Wings",
+    "ID": 2770,
+    "FlightTime": 2.83,
+    "Height": 94,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Spectre Wings",
+    "ID": 823,
+    "FlightTime": 2.83,
+    "Height": 94,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Beetle Wings",
+    "ID": 2280,
+    "FlightTime": 2.83,
+    "Height": 94,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Festive Wings",
+    "ID": 1871,
+    "FlightTime": 3.0,
+    "Height": 107,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Spooky Wings",
+    "ID": 1830,
+    "FlightTime": 3.0,
+    "Height": 107,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Tattered Fairy Wings",
+    "ID": 1797,
+    "FlightTime": 3.0,
+    "Height": 107,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Steampunk Wings",
+    "ID": 948,
+    "FlightTime": 3.0,
+    "Height": 107,
+    "SpeedBonus": 0
+  },
+  {
+    "Name": "Betsy's Wings",
+    "ID": 3883,
+    "FlightTime": 2.5,
+    "Height": 119,
+    "SpeedBonus": 150
+  },
+  {
+    "Name": "Empress Wings",
+    "ID": 4823,
+    "FlightTime": 2.5,
+    "Height": 128,
+    "SpeedBonus": 100
+  },
+  {
+    "Name": "Fishron Wings",
+    "ID": 2609,
+    "FlightTime": 3.0,
+    "Height": 143,
+    "SpeedBonus": 100
+  },
+  {
+    "Name": "Nebula Mantle",
+    "ID": 3470,
+    "FlightTime": 3.0,
+    "Height": 143,
+    "SpeedBonus": 50
+  },
+  {
+    "Name": "Vortex Booster",
+    "ID": 3469,
+    "FlightTime": 3.0,
+    "Height": 143,
+    "SpeedBonus": 50
+  },
+  {
+    "Name": "Solar Wings",
+    "ID": 3468,
+    "FlightTime": 3.0,
+    "Height": 167,
+    "SpeedBonus": 150
+  },
+  {
+    "Name": "Stardust Wings",
+    "ID": 3471,
+    "FlightTime": 3.0,
+    "Height": 167,
+    "SpeedBonus": 150
+  },
+  {
+    "Name": "Celestial Starboard",
+    "ID": 4954,
+    "FlightTime": 3.0,
+    "Height": 201,
+    "SpeedBonus": 350
+  }
+]

@@ -1,10 +1,13 @@
 namespace BetterTooltips.Common.Stats
 {
-  public class WingStat(float flightTime, int height, int speedBonus)
+  public record WingStat(
+    string Name,
+    int ID,
+    float FlightTime,
+    int Height,
+    int SpeedBonus
+  )
   {
-    public float FlightTime = flightTime;
-    public int Height = height;
-    public int SpeedBonus = speedBonus;
-    public static WingStat Empty() => new(0.0f, 0, 0);
+    public static WingStat Empty() => new("", 0, 0.0f, 0, 0);
   }
 }

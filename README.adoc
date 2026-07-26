@@ -40,7 +40,7 @@ git clone https://github.com/own-neufeldm/terraria-mods.git
 cd terraria-mods
 
 # create a symlink in tModLoader's mod sources, e.g.:
-.\mods.ps1 link BetterMetalDetector
+.\mods.cmd add BetterMetalDetector
 
 # tip: run the script without arguments for help 
 ----

@@ -50,8 +50,8 @@ namespace BetterTooltips.Common.Systems
       {
         var name = names[stat.Name];
         var item = mod.Find<ModItem>(name);
-        stat.ID = item.Type;
-        Cache.Add(stat.ID, stat);
+        var newStat = stat with { ID = item.Type };
+        Cache.Add(newStat.ID, newStat);
       }
     }
   }
